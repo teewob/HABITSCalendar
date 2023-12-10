@@ -1,0 +1,111 @@
+class MainApplication:
+    - Initialize the application window
+    - Create the Home page, Add Habit page, Calendar page, and Settings page
+    - Create navigation icons for each page at the bottom of the window
+    - Display the Home page
+
+
+    class HomePage:
+    - Initialize the page
+    - Display the current year at the top center
+    - Display the current week dates from Sunday to Saturday
+        - Highlight the current day
+                  like this...
+                 Su  Mo  Tu  We  Th  Fr Sa
+                 26  27  28  29  30  1   2
+
+    - Display a label saying "Today's habits"
+    - if there are not yet any habits made by pressing on the add icon, the empty space will say:
+    "add habits"
+    if there are habits already...
+    - Display a list of habits
+        - Each habit is shown in a rectangular widget
+            - upon clicking on the rectangular widget you will see the set title, description,
+            and you will see the habit hue progress of the calendar of the current month.
+        - In the display of Each habit widget is a small square for color coding the habit's progress
+               - this small square for progress is LOCATED within the habit widget on the right side
+               - upon clicking the small square you will be displayed the survey where you choose the color frequency for the day and you can always
+                 click it again to change it if you need.
+        - To the right of each habit widget, display a 3-dot menu
+        - When the 3-dot menu is clicked, you will be opened to a small option menu specific to the habit:
+                EDIT HABIT
+                RENAME
+                ARCHIVE HABIT
+                END HABIT
+                DELETE HABIT
+
+
+                EDIT HABIT: edit habit (this opens up the an edit action so that you can edit the title name, description, edit the color of habit hues (the color for each frequency), edit the frequency rate for each color,
+                and you can see the start date (unchangeable), and then the end date (you can set this to "no end date" or you can set it an end date by typing in the date in this format 00/00/0000 (month, day, and year).
+
+                RENAME: would allow you to just click over the habit widget to change the name/title of the habit.
+
+                ARCHIVE HABIT: would allow you to remove the habit from the home screen but save it for later (you can access it upon going to settings and pressing the archive tabs and seeing the archive habit in rows)
+                END HABIT: end habit would end the habit but it would be displayed in rows in your settings in a tab called "completed habits".
+                like archives (which would be incompleted or hiatus habits), completed habits are for habits that have an end date.
+
+                DELETE HABIT: upon pressing this option the interface will ask "are you sure you want to delete this habit"
+                and between options yes or no you can choose yes or no. and when the habit is deleted. it is deleted completely.
+
+
+class AddHabitPage:
+    - Initialize the page
+    - Display entry fields for the habit's title, description, and frequency
+    - class FrequencySection:
+    - Initialize the section
+    - Display a block for the goal
+    - Display a list of frequencies
+        - Each frequency has a color box, a rate, and a text box
+        - When the color box is clicked, open a color picker for the user to select a color
+        - When the rate is clicked, allow the user to input a rate
+            - Validate the user's input to ensure it's in ascending order and does not overlap with other rates
+        - When the text box is clicked, allow the user to input a measure
+
+           function adjustRate:
+            - Take the user's input rates as input
+            - Sort the rates in ascending order using a sorting algorithm
+            - Return the sorted rates
+
+              function validateRateInput:
+            - Take the user's input rate as input
+            - If the input is not a number, display an error message
+            - If the user tries to input a lower number after a dash, display an error message
+            - If there's overlap between the ranges, display an error message
+            - If the input is valid, return the input rate
+
+    - Display an "Add Frequency" button
+        - When the button is clicked, add a new frequency to the list
+    - after the frequency portion is a start date (which should show the date the widget was made)
+    - as well as an end date (which has the option of setting an end date, or having "no end" as an option too)
+
+    - When the user is finished, add the habit to the list on the Home page
+
+    CALENDAR PAGE
+    This page shows a full calendar with the current month as well as the previous and future months.
+    On the right, it shows a list of habits with their color coding.
+    Below the habits, it shows a list of completed habits.
+
+    class CalendarPage:
+    - Initialize the page
+    - Display a full calendar with the current month, previous months, and future months
+        - scroll vertically to span through the months from january to december
+           - after december should begin a new year, the following year
+           - before january would be the previous years. can go as way back as 2020.
+           - for future months can scroll as far as the months of 2025
+    - Display a list of habits widgets on the right
+        - upon pressing a habit widget the calendar will change to accommodate for the
+           habit's color-coded frequencies based on progress
+    - Display a list of completed habits below the list of habits
+        - if you completed any habits you can see them available as widgets in this portion.
+        - when you click on the habit widget you will see the habit hues of the days they were recorded.
+
+class SettingsPage:
+    - Initialize the page
+    - Display the user's profile picture
+    - Display the user's name to the right of the profile picture
+    - Display entry fields for the user's date of birth and gender
+    - Display the user's goals (current habits)
+    - Display the user's completed habits
+    - Display the user's archived habits
+
+
